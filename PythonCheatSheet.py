@@ -178,6 +178,7 @@ class Person:
     #Remove str() to be compared by int value
     def __lt__(self, other):    return str(self.age) < str(other.age) 
     def __hash__(self):    return hash(self.__str__())
+    #no entiendo "hash" para que se usa. 
     def __le__(self, other):    return self.age <= other.age
     def __ne__(self, other):    return not self.__eq__(other)
     def __gt__(self, other):    return self.age > other.age
