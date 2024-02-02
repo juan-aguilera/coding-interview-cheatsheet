@@ -184,7 +184,7 @@ class Person:
     def __gt__(self, other):    return self.age > other.age
     def __ge__(self, other):    return self.age >= other.age
 
-
+#entendido
 def tda_example():
     a = [Person("X",5), Person("A",3), Person("B",4), Person("BB",44)]
     debug(a) # [5(X), 3(A), 4(B), 44(BB)]
@@ -192,6 +192,7 @@ def tda_example():
     # Sorted by age, logic in __lt__
     debug(a) # [3(A), 4(B), 44(BB), 5(X)]
     s = set(a)
+    #elementos unicos. Elimina la posibilidad de agregar objetos repetidos
     debug(s) # {5(X), 44(BB), 4(B), 3(A)}
     s.add(Person("X",5)) # Will not affect because Person("X",5) already in set
     s.add(Person("XXXX",444))
@@ -202,7 +203,7 @@ def tda_example():
         m[person] = m[person] + 1 if person in m else 1
     debug(m) # {5(X): 5, 3(A): 1, 44(BB): 1, 444(XXXX): 1, 4(B): 1}
 
-
+#entendido
 
 
 
