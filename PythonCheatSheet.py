@@ -217,7 +217,7 @@ def sorting():
     example_list.sort(key=lambda x: (x % 2, -x))
     # Sort by remainder when divided by 2 in ascending order, and then by value in descending order
     debug(example_list) # [8, 4, 2, 5, 3, 1]
-
+#entendido
 
 def multidimensional_arrays():
     # m = [[0]*cols]*rows # WRONG!!!
@@ -822,3 +822,13 @@ if __name__ == "__main__":
 # this is another longer line of texts
 # 2this i2s 22a lo2nger l2ine o2f text2
 # 2this 2is a2nother l2onger lin2e 22of t2exts
+'''
+LO QUE DEBO REVISAR : 
+
+Complejidad computacional
+colas de prioridad-relacionado con heap (o monituculo)
+Decorador y decoradores mas usados de pyhton 
+expresiones regulares-que son, para que sirven y como usarlar
+Funciones anonimas-Lambda
+
+'''
