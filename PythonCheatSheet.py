@@ -1,7 +1,9 @@
 import sys, math, queue, itertools, collections, heapq, functools, string 
 import random, re, json, datetime, bisect, array, pprint
+#entiendo que es una importacion de librerias, pero no conozco la funcionalidad de todas, solo de algunas. 
 from dataclasses import dataclass, field
 from typing import List
+#no comprendo aun para que se usa este modulo e importanto "List"
 def LLI():  return [list(map(int, l.split())) for l in sys.stdin.readlines().strip()]
 def LI_():  return [int(x) - 1 for x in sys.stdin.readline().strip().split()]
 def LF():   return [float(x) for x in sys.stdin.readline().strip().split()] 
@@ -11,7 +13,8 @@ def LS():   return sys.stdin.readline().strip().split()
 def I():    return int(sys.stdin.readline().strip())
 def F():    return float(sys.stdin.readline().strip())
 def S():    return sys.stdin.readline().strip()
-def debug(*args):   print(*args, file=sys.stderr)
+#entendido
+def debug(*args):   print(*args, file=sys.stderr) #ayuda a imprimir informacion relevante que me ayuda a entender que esta haciendo el codigo en cualquier parte de este. 
 # python -m unittest discover -v
 def math_utilities():
     n = 123.456789
@@ -23,7 +26,7 @@ def math_utilities():
     debug(round(n, 2)) # 123.46
     debug(round(n, -1)) # 120.0
     debug(round(n, -2)) # 100.0
-
+    #entendido 
 def collections_utilities():
     deq = collections.deque([1, 2, 3, 4, 5])
     deq.appendleft(0)  # Insert at the beginning
@@ -34,6 +37,7 @@ def collections_utilities():
     cnt = collections.Counter('abracadabraaaabbb') 
     debug('Counter:', cnt) #Counter({'a': 8, 'b': 5, 'r': 2, 'c': 1, 'd': 1})
     debug('Most common:', cnt.most_common(3)) # [('a', 8), ('b', 5), ('r', 2)]
+    #hasta aqui bien. Entendido todo 
     for key, value in cnt.items():
         debug(f'Key: {key}({type(key)}), Value: {value}({type(value)})')     
         # Key: a(<class 'str'>), Value: 8(<class 'int'>)   
@@ -61,7 +65,7 @@ def collections_utilities():
     debug(c6) # Counter({'b': 4, 'a': 3, 'c': 1})
     d = dict.fromkeys(['a', 'b', 'c'], 0)
     debug(type(d), d) # <class 'dict'> {'a': 0, 'b': 0, 'c': 0}
-
+#entendido hasta aqui 
 def priority_queue_example():
     pq = queue.PriorityQueue() # Min heap, first attends lowest priority
     pq.put((2, 'code'))
@@ -74,7 +78,7 @@ def priority_queue_example():
         #Priority Queue item: (1, 'eat')
         #Priority Queue item: (2, 'code')
         #Priority Queue item: (3, 'sleep')
-
+#no entendí esta funcion
 def heapq_priority_queue_example():
     heap = [] # Min heap, first attends lowest priority
     heapq.heappush(heap, (2, 'code'))
@@ -87,7 +91,7 @@ def heapq_priority_queue_example():
         #Priority: 1, Task: eat len(heap): 2)
         #Priority: 2, Task: code len(heap): 1)
         #Priority: 3, Task: sleep len(heap): 0)
-
+#no entendi esta funcion 
 def string_utilities_example():
     example_string = "  Hello, World! Let's explore World Python string utilities.  "
     stripped_string = example_string.strip()
@@ -103,6 +107,7 @@ def string_utilities_example():
         debug('Index of "World":', index_world)
     except ValueError as e:
         debug('Error:', e)
+        #no me queda muy clara la funcionalidad:  try-except
     replaced_string = stripped_string.replace('World', 'there') #all occurrences
     debug('Replaced "World" with "there":', replaced_string)
 
@@ -117,7 +122,7 @@ def string_utilities_example():
     debug('Find "Python":', find_python)
     # isdigit() checks if all characters in the string are digits
     debug('Is digit:', "ab123".isdigit(), "938745983745".isdigit())
-
+#entendido 
 
 
 
@@ -142,10 +147,14 @@ def array_module_example():
     debug('Element at index 2:', int_array[2])
     debug('Index of element 4:', int_array.index(4)) #FIRST OCCURRENCE
     debug('Buffer info:', int_array.buffer_info()) # Buffer info: (4328086576, 11)
+    '''
+    De gpt: En resumen, un búfer es simplemente una región de memoria utilizada para almacenar temporalmente datos antes de su procesamiento o transferencia. 
+    En el caso de array.array, buffer_info() proporciona información sobre la región de memoria donde se almacenan los elementos del array.
+    ''' 
     int_list = int_array.tolist()
     debug('Array to list:', int_list) # Array to list: [1, 2, 4, 5, 3, 4, 3, 6, 7, 8, 9]
     debug('Count occurrences of 4:', int_array.count(4)) # Count occurrences of 4: 2
-    
+#entendido 
 def string_module_example():
     debug('Digits:', string.digits)  # '0123456789'
     debug('Ascii letters:', string.ascii_letters)  # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -157,12 +166,13 @@ def string_module_example():
     s = 'the quick brown fox jumps over the lazy dog'
     capitalized = string.capwords(s)
     debug('Capwords:', capitalized)  # 'The Quick Brown Fox Jumps Over The Lazy Dog'
-
+#entendido 
 class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
     def __str__(self):  return f"{self.name}({self.age})"
+    # "f" cadenas formateadas de strings 
     def __repr__(self): return f"{self.age}({self.name})"
     def __eq__(self, other):    return self.age == other.age and self.name == other.name
     #Remove str() to be compared by int value
